@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "leapjs": "^0.6.4",
-    "three": "^0.79.0"
+    "three": "^0.79.0",
+    "three-orbit-controls": "^72.0.0"
   }
 }
