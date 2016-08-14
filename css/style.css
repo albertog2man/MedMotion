@@ -26,7 +26,7 @@
    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#699bc8', endColorstr='#b5c5d8',GradientType=1 );
    background-repeat: no-repeat;
    background-size: cover;
-   height: 100vh
+   min-height: 100vh;
 }
 body {
   font-size: 1.5em;

@@ -26,9 +26,18 @@
     "electron-prebuilt": "^1.2.0"
   },
   "dependencies": {
-    "jquery": "^3.1.0",
+    "desandro-matches-selector": "^2.0.1",
+    "draggabilly": "^2.1.1",
+    "ev-emitter": "^1.0.3",
+    "fizzy-ui-utils": "^2.0.2",
+    "get-size": "^2.0.2",
+    "item": "0.0.0",
+    "jquery": "^2.2.4",
     "leapjs": "^0.6.4",
+    "packery": "^2.1.1",
     "three": "^0.79.0",
-    "three-orbit-controls": "^72.0.0"
+    "three-orbit-controls": "^72.0.0",
+    "unidragger": "^2.1.0",
+    "unipointer": "^2.1.0"
   }
 }
