@@ -1,122 +1,48 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <!-- See more examples at developer.leapmotion.com -->
-  <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-  <base href="https://editor-leapmotion.netdna-ssl.com/leapmotion/leapjs-plugins/91c6e9c6fe46306276a82f7c45299b2b8c279d17/main/screen-position/index.html.livegit?theme-id=4245&height=600" />
+  <meta charset="UTF-8">
+  <script   src="https://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="   crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.js"></script>
   <script src="https://js.leapmotion.com/leap-0.6.4.js"></script>
-  <script src="https://js.leapmotion.com/leap-plugins-0.1.11.js"></script>
-  <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
-
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-
-  <style>
-    body {
-      font-size: 1.5em;
-      line-height: 2em;
-    }
-
-    #cursor {
-      width: 60px;
-      height: 60px;
-      position: fixed;
-      margin-left: -50px;
-      margin-top: -50px;
-      z-index: 910;
-      opacity: 0.5;
-
-      background: black;
-      border-radius: 100%;
-      background: -webkit-radial-gradient(100px 100px, circle, #5cabff, #000);
-      background: -moz-radial-gradient(100px 100px, circle, #5cabff, #000);
-      background: radial-gradient(100px 100px, circle, #5cabff, #000);
-    }
-    .buttonWrap{
-      text-align: center;
-      margin-top: 200px;
-    }
-    button{
-      padding: 1em;
-      margin: auto;
-    }
-  </style>
-
+  <script src="./leap-plugin.js"></script>
+  <script src="https://js.leapmotion.com/leap-widgets-0.1.0.js"></script>
+  <script src="./OrbitControls.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/mdb.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 </head>
-<body>
-
-
+<body class="background-4">
   <div id="cursor"></div>
   <div class="container">
-    <div class="row">
-      <div class="col s12 m7">
-        <div class="card">
-          <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="http://placehold.it/350x150">
-          </div>
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-            <p><a href="#">This is a link</a></p>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+    <div class="grid">
+      <a href="https://youtube.com" title="">
+        <div class="col-xs-12 col-md-4 grid-item">
+          <div class="card testimonial-card">
+            <div class="card-up primary-color">
+            </div>
+            <div class="avatar"><img src="http://mdbootstrap.com/wp-content/uploads/2015/10/avatar-2.jpg" class="img-circle img-responsive">
+            </div>
+            <div class="card-block">
+              <h4 class="card-title">Katie Black</h4>
+              <hr>
+
+            </div>
           </div>
         </div>
-      </div>
+      </a>
     </div>
   </div>
   <div id="output" class="output"></div>
-
-  <div class="buttonWrap">
-    <button>Hover Me!</button>
-  </div>
-
-  <script type="text/javascript">
-    var $ = require('jquery');
-    window.cursor = $('#cursor');
-    window.output = $('#output');
-
-    Leap.loop({enableGestures: true, hand: function(hand){
-
-      var screenPosition = hand.screenPosition(hand.palmPosition);
-
-      var outputContent = "x: " + (screenPosition[0].toPrecision(4)) + 'px' +
-             "        <br/>y: " + (screenPosition[1].toPrecision(4)) + 'px' +
-             "        <br/>z: " + (screenPosition[2].toPrecision(4)) + 'px';
-
-
-      // hide and show the cursor in order to get second-topmost element.
-      cursor.hide();
-      var el = document.elementFromPoint(
-          hand.screenPosition()[0],
-          hand.screenPosition()[1]
-      );
-      cursor.show();
-
-      if (el){
-        outputContent += '<br>Topmost element: '+ el.tagName + ' #' + el.id +  ' .' + el.className;
-      }
-
-      output.html(outputContent);
-
-      cursor.css({
-        left: screenPosition[0] + 'px',
-        top:  screenPosition[1] + 'px'
-      });
-
-    }}, function(frame){
-      if(frame.valid && frame.gestures.length > 0){
-        frame.gestures.forEach(function(gesture){
-          if(gesture.type === "circle"){
-            console.log()
-          }
-        });
-      }
-    })
-    .use('screenPosition', {scale: 1});
-  </script>
-
 </body>
+<div class="javascript">
+  <script type="text/javascript" src="js/tether.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" src="js/mdb.js"></script>
+  <script type="text/javascript" src="js/packery.js"></script>
+  <script type="text/javascript" src="js/draggable.js"></script>
+  <script type="text/javascript" src="js/application.js"></script>
+
+</div>
 </html>
