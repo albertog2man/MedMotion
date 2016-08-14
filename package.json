@@ -26,6 +26,7 @@
     "electron-prebuilt": "^1.2.0"
   },
   "dependencies": {
+    "jquery": "^3.1.0",
     "leapjs": "^0.6.4",
     "three": "^0.79.0",
     "three-orbit-controls": "^72.0.0"

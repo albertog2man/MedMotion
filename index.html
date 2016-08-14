@@ -1,125 +1,122 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-  <head>
-    <meta charset="UTF-8">
-<<<<<<< HEAD
-    <title>Hello World!</title>
-    <link rel="stylesheet" href="./assets/css/index.css">
-    <!-- <script src="https://js.leapmotion.com/leap-0.6.4.js"></script> -->
-    <!-- <script src="https://js.leapmotion.com/leap.rigged-hand-0.1.7.js"></script> -->
-    <!-- <script src="https://js.leapmotion.com/leap-plugins-0.1.11-utils.js"></script> -->
-
-  </head>
-  <body>
-
-  </body>
-
-=======
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.js"></script>
-    <script src="https://js.leapmotion.com/leap-0.6.4.js"></script>
-    <script src="./leap-plugin.js"></script>
-    <script src="https://js.leapmotion.com/leap-widgets-0.1.0.js"></script>
-    <script src="./OrbitControls.js"></script>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    <script>
-    
-    'use strict';
-    // Set up plugins
-    Leap.loop({background: true})
-      .use('transform', {
-        vr: 'desktop' // Switch to meters.
-      })
-      .use('boneHand', {
-        targetEl: document.body,
-        jointColor: new THREE.Color(0xffffff),
-        rendererOps: {antialias: true}
-      })
-      .use('proximity');
-    // Set up scene
-    var scene = Leap.loopController.plugins.boneHand.scene;
-    var camera = Leap.loopController.plugins.boneHand.camera;
-    var renderer = Leap.loopController.plugins.boneHand.renderer;
-    camera.position.set( 0, 0.3, 0.6 );
-    var controls = new THREE.OrbitControls( camera );
-    var axisHelper = new THREE.AxisHelper( 0.1 );
-    scene.add( axisHelper );
-    // Add a plane
-    var planeGeo = new THREE.PlaneGeometry(0.1, 0.2);
-    var material = new THREE.MeshPhongMaterial();
-    var buttonMesh = new THREE.Mesh(planeGeo, material);
-    buttonMesh.name = "rectangular button";
-  //  buttonMesh.scale.setY(0.5);
-    var longThrow = -0.1;
-    var squareButton = new PushButton(
-      new InteractablePlane(buttonMesh, Leap.loopController),
-      {
-        locking: false,
-        longThrow: longThrow
-      }
-    ).on('press', function(mesh){
-      mesh.material.color.setHex(0xccccff);
-    }).on('release', function(mesh){
-      mesh.material.color.setHex(0xeeeeee);
-    });
-    squareButton.plane.hover(
-      function(mesh){ // over
-        console.log('hover in');
-        mesh.material.color.setHex(0xffccff);
-      },
-      function(mesh){ // out
-        console.log('hover out');
-        mesh.material.color.setHex(0xeeeeee);
-      }
-    );
-    var base = new THREE.Mesh(new THREE.BoxGeometry(0.1, longThrow, longThrow), new THREE.MeshPhongMaterial({color: 0x222222}));
-    base.position.set(0.05, 0, -0.1);
-    base.rotateY(Math.PI * -0.15);
-    buttonMesh.position.set(
-      0,
-      buttonMesh.geometry.parameters.height / 2 - longThrow / 2,
-      -longThrow / 2
-    );
-    squareButton.plane.resetPosition(); // resets the original position, etc to the current one
-  //  base.rotateX(Math.PI * -0.45);
-  //  base.position.set(0.2,0,0.2);
-    base.add(buttonMesh);
-    scene.add(base);
-    
-    
-    // Circular button:
-    var circleGeo = new THREE.CircleGeometry(0.1, 32);
-    buttonMesh = new THREE.Mesh(circleGeo, material.clone());
-    buttonMesh.name = "round button";
-    buttonMesh.position.set(-0.12, 0.1, -0.1);
-    scene.add(buttonMesh);
-    var roundButton = new PushButton(
-      // for now, constructing with moveX and moveY turned off so that doesn't try and watch for XY intersections,
-      // which won't work for circles.
-      // todo - have a setter for moveX and moveY, so that proximities can be turned on and off.
-      // Note that we have to bind press and release effects to each individual button. This is a long way from CSS rules still.
-      new InteractablePlane(buttonMesh, Leap.loopController, {moveX: false, moveY: false})
-    ).on('press', function(mesh){
-      mesh.material.color.setHex(0xccccff);
-      alert('something happens now')
-    }).on('release', function(mesh){
-      mesh.material.color.setHex(0xeeeeee);
-    });
-    </script>
-    <canvas width="424" height="1594" class="leap-boneHand" style="width: 212px; height: 797px;"></canvas>
-    </body>
->>>>>>> 73cd15e65368af4e2b342de1c3dd8aa1f1fa5a15
-  <script>
-  // You can also require other files to run in this process
-  require('./renderer.js');
-  </script>
-<<<<<<< HEAD
-  <script type="text/javascript" src="./assets/js/index.js"></script>
+<head>
+  <!-- See more examples at developer.leapmotion.com -->
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+  <base href="https://editor-leapmotion.netdna-ssl.com/leapmotion/leapjs-plugins/91c6e9c6fe46306276a82f7c45299b2b8c279d17/main/screen-position/index.html.livegit?theme-id=4245&height=600" />
+  <script src="https://js.leapmotion.com/leap-0.6.4.js"></script>
   <script src="https://js.leapmotion.com/leap-plugins-0.1.11.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.js"></script>
-  <script src="https://js.leapmotion.com/leap-widgets-0.1.0.js"></script>
-=======
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
 
->>>>>>> 73cd15e65368af4e2b342de1c3dd8aa1f1fa5a15
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+
+  <style>
+    body {
+      font-size: 1.5em;
+      line-height: 2em;
+    }
+
+    #cursor {
+      width: 60px;
+      height: 60px;
+      position: fixed;
+      margin-left: -50px;
+      margin-top: -50px;
+      z-index: 910;
+      opacity: 0.5;
+
+      background: black;
+      border-radius: 100%;
+      background: -webkit-radial-gradient(100px 100px, circle, #5cabff, #000);
+      background: -moz-radial-gradient(100px 100px, circle, #5cabff, #000);
+      background: radial-gradient(100px 100px, circle, #5cabff, #000);
+    }
+    .buttonWrap{
+      text-align: center;
+      margin-top: 200px;
+    }
+    button{
+      padding: 1em;
+      margin: auto;
+    }
+  </style>
+
+</head>
+<body>
+
+
+  <div id="cursor"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m7">
+        <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="http://placehold.it/350x150">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+            <p><a href="#">This is a link</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="output" class="output"></div>
+
+  <div class="buttonWrap">
+    <button>Hover Me!</button>
+  </div>
+
+  <script type="text/javascript">
+    var $ = require('jquery');
+    window.cursor = $('#cursor');
+    window.output = $('#output');
+
+    Leap.loop({enableGestures: true, hand: function(hand){
+
+      var screenPosition = hand.screenPosition(hand.palmPosition);
+
+      var outputContent = "x: " + (screenPosition[0].toPrecision(4)) + 'px' +
+             "        <br/>y: " + (screenPosition[1].toPrecision(4)) + 'px' +
+             "        <br/>z: " + (screenPosition[2].toPrecision(4)) + 'px';
+
+
+      // hide and show the cursor in order to get second-topmost element.
+      cursor.hide();
+      var el = document.elementFromPoint(
+          hand.screenPosition()[0],
+          hand.screenPosition()[1]
+      );
+      cursor.show();
+
+      if (el){
+        outputContent += '<br>Topmost element: '+ el.tagName + ' #' + el.id +  ' .' + el.className;
+      }
+
+      output.html(outputContent);
+
+      cursor.css({
+        left: screenPosition[0] + 'px',
+        top:  screenPosition[1] + 'px'
+      });
+
+    }}, function(frame){
+      if(frame.valid && frame.gestures.length > 0){
+        frame.gestures.forEach(function(gesture){
+          if(gesture.type === "circle"){
+            console.log()
+          }
+        });
+      }
+    })
+    .use('screenPosition', {scale: 1});
+  </script>
+
+</body>
 </html>
