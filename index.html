@@ -7,11 +7,35 @@
     <script src="./leap-plugin.js"></script>
     <script src="https://js.leapmotion.com/leap-widgets-0.1.0.js"></script>
     <script src="./OrbitControls.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/mdb.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
   </head>
-  <body>
-    <h1>Hello World!</h1>
+  <body class="background-4">
+
+    <div class="container">
+      <div class="grid">
+        <a href="#" title="">
+          <div class="col-xs-12 col-md-4 grid-item">
+            <div class="card testimonial-card">
+              <div class="card-up primary-color">
+              </div>
+              <div class="avatar"><img src="http://mdbootstrap.com/wp-content/uploads/2015/10/avatar-2.jpg" class="img-circle img-responsive">
+              </div>
+              <div class="card-block">
+                <h4 class="card-title">Katie Black</h4>
+                <hr>
+
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
     <script>
-    
+
     'use strict';
     // Set up plugins
     Leap.loop({background: true})
@@ -73,8 +97,8 @@
   //  base.position.set(0.2,0,0.2);
     base.add(buttonMesh);
     scene.add(base);
-    
-    
+
+
     // Circular button:
     var circleGeo = new THREE.CircleGeometry(0.1, 32);
     buttonMesh = new THREE.Mesh(circleGeo, material.clone());
@@ -100,5 +124,14 @@
     // You can also require other files to run in this process
     require('./renderer.js')
   </script>
+  <div class="javascript">
+    <script type="text/javascript" src="js/jquery-2.2.3.js"></script>
+    <script type="text/javascript" src="js/tether.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/mdb.js"></script>
+    <script type="text/javascript" src="js/packery.js"></script>
+    <script type="text/javascript" src="js/draggable.js"></script>
+    <script type="text/javascript" src="js/application.js"></script>
 
+  </div>
 </html>
