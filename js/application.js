@@ -1,14 +1,4 @@
 $(function(){
-
-  var $grid = $('.grid').packery({
-    itemSelector: '.grid-item'
-  });
-
-  $grid.find('.grid-item').each(function(i, gridItem) {
-    var draggie = new Draggabilly(gridItem);
-    console.log("got it");
-    $grid.packery('bindDraggabillyEvents', draggie);
-  });
   
   window.cursor = $('#cursor');
   window.output = $('#output');
@@ -51,4 +41,6 @@ $(function(){
     }
   })
   .use('screenPosition', {scale: 1});
-})
+  
+  // $('#name').text(PatientFinder.getAllPatients);
+});
