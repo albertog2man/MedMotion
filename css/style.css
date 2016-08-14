@@ -28,3 +28,31 @@
    background-size: cover;
    height: 100vh
 }
+body {
+  font-size: 1.5em;
+  line-height: 2em;
+}
+
+#cursor {
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  margin-left: -50px;
+  margin-top: -50px;
+  z-index: 910;
+  opacity: 0.5;
+
+  background: black;
+  border-radius: 100%;
+  background: -webkit-radial-gradient(100px 100px, circle, #5cabff, #000);
+  background: -moz-radial-gradient(100px 100px, circle, #5cabff, #000);
+  background: radial-gradient(100px 100px, circle, #5cabff, #000);
+}
+.buttonWrap{
+  text-align: center;
+  margin-top: 200px;
+}
+button{
+  padding: 1em;
+  margin: auto;
+}
